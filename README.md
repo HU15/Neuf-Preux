@@ -3,7 +3,7 @@
  
  Le projet constitue la mise à disposition d'un corpus de transcriptions semi-diplomatiques de textes concernant les Neuf Preux, ainsi que des descriptions des manuscrits les contenant.
  
- Site Web du projet
+ [Site Web du projet](https://hu15.github.io/Neuf-Preux/)
 
 # # Présentation du projet
 
