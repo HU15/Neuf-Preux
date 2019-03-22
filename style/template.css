@@ -1,0 +1,74 @@
+/*
+
+Feuille de style pour le template 'Neuf Preux'
+
+*/
+
+.neuf-preux h3 {
+	color: navy;
+}
+
+.neuf-preux .title h2 {
+	color: crimson;
+}
+
+.neuf-preux .title .byline {
+    color: darkseagreen;
+}
+
+.neuf-preux #header-wrapper {
+    background: crimson;
+}
+
+.neuf-preux #banner {
+    overflow: hidden;
+		height: 500px;
+    background: url("export.png") no-repeat center;
+		background-attachment: fixed;
+		background-size: cover;
+}
+
+.neuf-preux .hu_rel {
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.main-page h3 {
+    color: seagreen;
+}
+
+.main-page a {
+    color: navy;
+}
+
+.main-page a:link {
+    color: navy;
+    text-decoration: none;
+}
+
+.main-page a:hover {
+    color: navy;
+}
+
+.main-page #content {
+    width: 36%;
+}
+
+.main-page .content {
+    width: 36%;
+}
+
+.main-page #sidebar {
+    width: 36em;
+}
+
+.main-page #sidebar .title h2 {
+    font-weight: 400;
+    font-size: 2em;
+    color: navy
+}
+
+.main-page .hu_rel {
+    padding: 1em;
+    margin: 1em 0;
+}

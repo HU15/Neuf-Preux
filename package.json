@@ -1,0 +1,14 @@
+{
+  "name": "histoires-universelles-xv",
+  "repository": "https://github.com/HU15/histoires-universelles-xv",
+  "version": "1.0.0",
+  "licence": "Creative Commons",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-file-include": "^1.0.0"
+  },
+    "scripts": {
+    "build": "gulp default"
+ }
+}
