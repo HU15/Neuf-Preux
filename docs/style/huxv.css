@@ -1,0 +1,226 @@
+/*
+
+Voici une première tentative (dépréciée) dont l’objectif était
+de construire une seule feuille monolithique contenant toutes
+les règles requises. La maquette de base était inspirée
+du eBook de *Structure and Interpretation of Computer Programs*.
+
+Gardée pour référence future.
+
+*/
+
+* {
+    font-weight: normal;
+}
+
+html {
+    font-family: "EB Garamond", serif;
+    font-size: 170%;
+    color: #000000;
+    line-height: 130%;
+    -moz-font-feature-settings: "liga" 1;
+    -ms-font-feature-settings: "liga" 1;@
+    -webkit-font-feature-settings: "liga";
+    -o-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+}
+
+@media (min-width: 481px) and (max-width: 960px) {
+    html {
+        font-size: 140%;
+    }
+
+    blockquote {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 120%;
+    }
+
+    h1, h2, h3, h4, h5 {
+        line-height: 110%;
+    }
+
+    p {
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+    }
+
+    nav p {
+        -ms-hyphens: none;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        hyphens: none;
+    }
+
+    blockquote {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+}
+
+@media (max-width: 960px) {
+    html {
+        line-height: 126%;
+    }
+
+    pre, pre code, pre var {
+        line-height: 140%;
+    }
+
+    h2 ~ p:first-of-type:first-letter {
+        font-size: 2.9em;
+    }
+}
+
+body {
+    background-color: white;
+    margin: 0;
+}
+
+section {
+    margin: 1em auto;
+    width: 28em;
+    max-width: 88%;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 4em;
+    margin-bottom: 2em;
+    line-height: 120%;
+    color: darkred;
+}
+
+h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.57rem;
+    line-height: 110%;
+    color: darkred;
+}
+
+h3 {
+    margin-top: 2em;
+    font-size: 1.31rem;
+    color: navy;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+strong {
+    font-family: "TeX Gyre Chorus",
+    "Zapf Chancery",
+    "Lucida Calligraphy",
+    "Apple Chancery",
+    cursive;
+}
+
+pre, code, tt, samp {
+    font-family: "Inconsolata",
+    "DejaVu Sans Mono",
+    "Menlo",
+    "Consolas",
+    monospace;
+    font-size: 0.8rem;
+}
+
+pre, pre code, pre var {
+    font-size: 0.77rem;
+    line-height: 150%;
+}
+
+p, table, div {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+}
+
+sub {
+    top: 0.4em;
+}
+
+a[href] {
+    color: navy;
+    text-decoration: none;
+}
+
+figure {
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 1.2em;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+figcaption {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    min-width: 10em;
+    margin-top: 1em;
+}
+
+figcaption p {
+    text-align: left;
+    margin: 0;
+}
+
+h2 ~ p:first-of-type:first-line {
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
+    -moz-font-feature-settings: "onum", "smcp";
+    -ms-font-feature-settings: "onum", "smcp";
+    -webkit-font-feature-settings: "onum" 1, "smcp" 1;
+    -o-font-feature-settings: "onum", "smcp";
+    font-feature-settings: "onum", "smcp";
+}
+
+h2 ~ p:first-of-type:first-letter {
+    float: left;
+    margin-top: 0.4rem;
+    margin-right: 0.04em;
+    margin-bottom: -0.1em;
+    margin-left: -0.2ex;
+    padding-left: 0;
+    line-height: 0.67em;
+    text-transform: uppercase;
+    font-size: 3.0em;
+    color: #c0c0c0;
+}
+
+nav {
+    display: flex;
+}
+
+nav p {
+    flex: 1;
+    padding: 1ex;
+    border: 1pt outset gray;
+    margin: 1ex;
+}
+
+nav p a {
+    display: inline-block;
+    margin: 1ex auto;
+}

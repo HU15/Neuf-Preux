@@ -1,0 +1,807 @@
+/*
+
+Cette feuille de styles a été adaptée à partir d’un exemplaire «démo»
+développé par [Templated](templated.co). La feuille était au départ
+conçue pour un site dynamique avec un vocabulaire HTML4. Nous avons
+ajouté et modifié plusieurs règles afin de rendre la feuille optimale
+pour un site statique utilisant un vocabulaire HTML5 plus modulaire.
+Nous avons opté pour l’utilisation du module Flexbox en remplacement
+des `float` définis dans la feuille de départ. Certaines unités
+documentaires plus atomiques utilisent un mode de positionnement
+relatif et des éléments anonymes remplacés.
+
+La feuille est donc constituée de règles liées de près au balisage
+des éléments externes (héritées de Templated) et de règles plus
+flexibles définies pour nos éléments de contenu. Cela rend les
+éléments internes des pages relativement modulaires et il est aisé
+d’envisager une réutilisation des documents dans différents contextes
+de traitement.
+
+                                                 Christian Gagné
+
+                            * * *
+
+Ci-dessous, les sélecteurs d’éléments, de l’extérieur vers l’intérieur.
+Au bas de la feuille, on trouve de nouvelles classes ajoutées pour le
+modèle de contenu de notre projet. Ces classes «HU15» sont employées
+ci-dessous afin de sélectionner certains éléments dans un contexte plus
+spécifique lié au modèle de contenu HU15.
+
+*/
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: black;
+    font-family: 'Charis SIL',
+                 'Bitstream Charter',
+                 'Georgia',
+                 serif;
+    font-size: 12pt;
+    font-weight: 400;
+    color: black;
+}
+
+article header {
+    display: block;
+	margin: 1em 0 1em 0;
+}
+
+article footer {
+    display: block;
+	margin: 1em 0 1em 0;
+}
+
+article, section {
+	display: block;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+	margin: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	font-size: 1.5em;
+	color: darkred;
+}
+
+h4 {
+	color: black;
+	font-size: 1.25em;
+}
+
+article header>h4 {
+	margin: 0;
+}
+
+ol, ul {
+    margin: 0;
+}
+
+dl {
+	margin: 0;
+	padding: 0;
+}
+
+dt {
+	display: block;
+	max-width: 40em;
+	padding: 0.25em 1em 0.25em 1em;
+	margin: 0;
+	line-height: 125%;
+	font-weight: bold;
+}
+
+dd {
+	max-width: 40em;
+	padding: 0.25em 1em 0.25em 1em;
+	margin: 0 0 0 1em;
+	line-height: 125%;
+	text-align: justify;
+}
+
+p, blockquote {
+	max-width: 40em;
+	margin: 0;
+	padding: 0 0 0.25em 0;
+	line-height: 125%;
+	text-align: justify;
+	text-indent: 1em;
+}
+
+.hu_desc-temoin blockquote::before {
+	content: '“';
+	font-size: 2em;
+	color: grey;
+	position: absolute;
+	left: 0.25em;
+}
+
+.hu_desc-temoin blockquote::after {
+	content: '”';
+	font-size: 2em;
+	color: grey;
+	position: absolute;
+	right: 0.25em;
+}
+
+article header>p {
+	font-weight: bold;
+	text-indent: 0;
+}
+
+article footer>p {
+	font-weight: bold;
+	text-indent: 0;
+}
+
+li {
+	max-width: 40em;
+	margin: 0;
+    line-height: 125%;
+    text-align: justify;
+}
+
+li p {
+	text-indent: 0;
+}
+
+article ul li {
+	/* Ceci est une amélioration
+	 progressive et son absence
+     n’a pas d’effet négatif. */
+	list-style-type: '– ';
+}
+
+a {
+    color: #171717;
+	text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+article p a,
+article li a,
+article dt a,
+article dd a,
+article blockquote a {
+	text-decoration: underline;
+}
+
+a img {
+    border: none;
+}
+
+    .image {
+        display: inline-block;
+    }
+    
+        .image img {
+            display: block;
+            width: 100%;
+        }
+
+    .image-full {
+        display: block;
+        width: 100%;
+        margin: 0 0 2em 0;
+    }
+    
+    .image-left {
+        float: left;
+        margin: 0 2em 2em 0;
+    }
+    
+    .image-centered {
+        display: block;
+        margin: 0 0 2em 0;
+    }
+
+        .image-centered img {
+            margin: 0 auto;
+            width: auto;
+        }
+
+/* Les deux règles suivantes empêchent la hauteur de ligne
+   de changer à cause des surcrits et souscrits. */
+sup, sub {
+	vertical-align: baseline;
+	position: relative;
+	top: -0.4em;
+	line-height: 0;
+}
+
+sub {
+	top: 0.4em;
+}
+
+/*********************************************************************************/
+/* Classes de listes et sélecteurs spécifiques                                   */
+/*********************************************************************************/
+
+	ul.style1 {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	ul.style1 li {
+		border-top: solid 1px #E5E5E5;
+		padding: 0.8em 0;
+	}
+
+	ul.style1 li:first-child {
+		border-top: 0;
+		padding-top: 0;
+	}
+
+	ul.style2 {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	ul.style2 li {
+		border-top: solid 1px #E5E5E5;
+		padding: 0.8em 0;
+	}
+	
+	ul.style2 li:first-child {
+		border-top: 0;
+		padding-top: 0;
+	}
+
+/*********************************************************************************/
+/* Titres en-têtes                                                               */
+/*********************************************************************************/
+
+	.title {
+		margin-bottom: 2em;
+	}
+
+	.title h2 {
+		font-weight: 400;
+		font-size: 2em;
+		color: navy;
+	}
+	
+	.title .byline {
+		letter-spacing: 0.15em;
+		font-variant: small-caps;
+		font-weight: 400;
+		font-size: 0.90em;
+		color: darkred;
+	}
+
+/*
+
+Les wrappers suivants sont appliqués aux éléments `div`. Il servent à
+positionner les éléments imbriqués.
+
+*/
+
+#wrapper {
+	background: #FFF;
+}
+
+.container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-webkit-justify-content: center;
+	-webkit-align-items: flex-start;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	width: auto;
+	margin: 0 auto;
+}
+
+.clearfix {
+	clear: both;
+}
+
+#header-wrapper {
+    padding: 2em 0 2em 0;
+    background: navy;
+}
+
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+#header {
+    position: relative;
+    text-align: center;
+}
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+
+	#logo {
+		margin: auto;
+	}
+	
+	#logo h1 {
+		letter-spacing: 0.10em;
+		font-size: 2em;
+	}
+	
+	#logo p {
+		letter-spacing: 0.10em;
+		color: #FFF;
+	}
+	
+	#logo a {
+		text-decoration: none;
+		color: #FFF;
+	}
+
+/*********************************************************************************/
+/* Banner (employé seulement sur la page d’accueil dans le design actuel)        */
+/*********************************************************************************/
+
+	#banner {
+		overflow: hidden;
+		height: 500px;
+		background: url(export-2.png) no-repeat center;
+		background-attachment: fixed;
+		background-size: cover;
+	}
+
+/*
+
+Menu principal
+
+Ici, le #menu sera gardé puisqu’il n’y a logiquement qu’un seul
+menu principal par page. L’élément sera nav au lieu de div.
+
+*/
+
+#menu-wrapper {
+	background: black;
+}
+
+#menu ul {
+	height: 100px;
+	padding: 0;
+	list-style: none;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex: 1 0 auto;
+	flex: 1 0 auto;
+}
+
+#menu li {
+	margin: auto;
+	text-align: center;
+}
+
+#menu a {
+	margin: auto;
+	letter-spacing: 1pt;
+	text-decoration: none;
+	font-variant: small-caps;
+	font-size: 0.8em;
+	border: none;
+	color: #FFF;
+}
+
+#menu a::before {
+	content: '|';
+}
+
+#menu a::after {
+	content: '|';
+}
+
+#menu a:hover, #menu .current_page_item a {
+	text-decoration: none;
+}
+
+#menu .current_page_item a {
+	background: Gray;
+}
+
+
+/*
+
+Partie principale de la page visible, après le menu et le titre h1
+
+Le mode de positionnement du div#page importe pour la disposition de
+ce qui précède et ce qui suit. `relative` est bel et bien le bon mode
+pour obtenir le comportement souhaité.
+
+*/
+
+#page {
+	position: relative;
+	overflow: hidden;
+	padding: 6em 0em 5em 0em;
+}
+
+/*
+
+Identifiant du contenu: titre spécifique h2 + contenu effectif rédigé
+
+Nouvelle nomenclature à adopter: `article.content` au lieu de `div#content`
+afin qu’une page (un fichier) puisse contenir plus d’un article. Il est
+permis de faire coexister une classe et un identifiant portant le même
+nom, donc nous allons laisser l’`id` sur les pages déjà construites où
+il y a peu de chance qu’on ajoute plus d’un article et, sur les pages
+où cela convient, utiliser la classe `.content` dont les déclarations CSS
+sont les mêmes que pour l’`id`.
+
+Le mode de positionnement flottant est utilisé pour l’article parce que
+le `nav` qui suit doit apparaître latéralement. Des modes de positionnement
+équivalents existent pour ce cas d’utilisation, mais `float` convient et
+ne pose pas les problèmes habituels qu’on rencontre en utilisant `float`
+dans dans des colonnes de contenu phrasé restreintes.
+
+*/
+
+#content {
+	width: 48em;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+.content {
+	width: 48em;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+/*********************************************************************************/
+/* Sidebar                                                                       */
+/*********************************************************************************/
+
+/*
+
+Cette nomenclature de style HTML4 utilise un identifiant unique,
+mais logiquement tout article peut être suivi de son propre
+menu `nav` latéral, donc on peut aussi changer `#sidebar` pour
+`.sidebar`, mais dans l’architecture actuelle ce n’est pas
+nécessaire.
+
+*/
+
+#sidebar {
+	width: 24em;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+#sidebar .title h2 {
+	font-size: 1.6em;
+}
+
+#sidebar .box1 {
+	margin-bottom: 3em;
+}
+
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+
+#copyright-wrapper {
+	background: white;
+	height: 120px;
+}
+
+	#copyright {
+		margin: auto;
+		padding: 9em 3em 3em 3em;
+	}
+
+	#copyright p {
+		text-indent: 0;
+		text-align: center;
+		letter-spacing: 0.20em;
+		font-variant: small-caps;
+		font-size: 0.8em;
+		color: gray;
+		padding: 1em;
+		max-width: 28em;
+	}
+	
+	#copyright a {
+		text-decoration: none;
+		color: white;
+	}
+
+/*********************************************************************************/
+/* Welcome (non employé dans le design actuel)                                   */
+/*********************************************************************************/
+
+	#welcome {
+		overflow: hidden;
+		padding: 5em 0em;
+		border-bottom: 1px solid #E5E5E5;
+		text-align: center;
+	}
+	
+	#welcome h2 {
+		letter-spacing: 0.20em;
+		font-size: 2.6em;
+	}
+	
+	#welcome p {
+		font-size: 1.3em;
+	}
+
+	#welcome .byline {
+		display: block;
+		padding: 0em 0em 1.5em 0em;
+		letter-spacing: 0.15em;
+		font-weight: 400;
+		font-size: 1.2em;
+		color: #6F6F6F;
+	}
+
+/*********************************************************************************/
+/* Portfolio (non employé dans le design actuel)                                 */
+/*********************************************************************************/
+
+	#portfolio-wrapper {
+		background: rgba(0,0,0,.04);
+		padding: 6em 0em;
+		color: rgba(255,255,255,.7);
+	}
+	
+	#portfolio {
+		overflow: hidden;
+	}
+	
+	#portfolio .title h2 {
+		font-size: 1.2em;
+		color: #FFF;
+	}
+
+	#portfolio .byline {
+		font-size: 1em;
+		color: #EEA7C1;
+	}
+	
+	#column1,
+	#column2,
+	#column3,
+	#column4 {
+		width: 282px;
+	}
+	
+	#column1,
+	#column2 {
+		float: left;
+		margin-right: 24px;
+	}
+	
+	#column3 {
+		float: left;
+	}
+	
+	#column4 {
+		float: right;
+	}
+	
+/*********************************************************************************/
+/* Button Style (non employé dans le design actuel)                              */
+/*********************************************************************************/
+
+	.button {
+		display: inline-block;
+		margin-top: 1.5em;
+		padding: 1.50em 3em 1.50em 3em;
+		background: #16a085;
+		text-decoration: none;
+		font-variant: small-caps;
+		font-weight: 400;
+		font-size: 0.90em;
+		color: #FFF;
+	}
+	
+		.button:before {
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			border-radius: 20px;
+			text-align: center;
+			color: #FFF;
+		}
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+	
+	#footer-wrapper {
+		overflow: hidden;
+		padding: 5em 0em;
+		background: #1E1B1A;
+        width:100%
+	}
+
+	#footer {
+		color: #ADADAD;
+	}
+	
+	#footer .title h2 {
+		font-weight: 400;
+		font-size: 1.2em;
+		color: #FFF;
+	}
+
+	#footer .title {
+		border-color: #2D2926 !important;
+	}
+	
+	#footer .style1 li {
+		border-color: #2D2926 !important;
+	}
+	
+	#footer .style1 a {
+		font-size:1em;
+		color: #B1B1B1;
+	}
+	
+	#box1 {
+		float: left;
+		width: 354px;
+		margin-right: 24px;
+		padding-right: 30px;
+		margin-left: 24px;
+		padding-left: 30px;
+	}
+
+	#box2 {
+		float: left;
+		width: 354px;
+		margin-left: 24px;
+		padding-right: 30px;
+	}
+	
+	#box3 {
+		float: right;
+		width: 344px;
+		padding-left: 40px;
+	}
+
+/*
+
+Styles supplémentaires attribués par classe
+pour enrichir la présentation des articles.
+Les noms des classes doivent être préfixés
+par `hu_` et les termes du nom doivent être
+séparés par des traits d’union.
+
+L’application de ces classes sert entre autres
+à harmoniser la sémantique de présentation du
+contenu HTML avec celle que nous avons définie
+pour le contenu TEI. Ainsi, les créateurs de
+contenu ont le choix entre les deux vocabulaires
+et, si une correspondance directe existe entre
+un élément HTML donné et un élément TEI donné,
+les deux auront une même représentation dans
+la mesure ou les différences d’imbrication le
+permettent.
+
+*/
+
+.hu_desc-temoin {
+	border-left: 2px outset gray;
+	border-radius: 0px 5px 5px 0px;
+	background: rgb(236, 236, 255);
+	padding: 1em;
+	margin: 1em 0;
+	max-width: 42em;
+	position: relative;
+}
+
+.hu_rel p,
+.hu_rel li,
+.hu_rel dd,
+.hu_rel blockquote {
+	text-align: left;
+}
+
+.hu_rel {
+	border-left: 2px outset gray;
+	border-radius: 0px 5px 5px 0px;
+	background: rgb(236, 236, 255);
+	padding: 1ex;
+	margin: 1em;
+	max-width: 42em;
+	position: relative;
+}
+
+.hu_enonce {
+	border-radius: 0px 5px 5px 0px;
+	background: rgba(236, 236, 255, 0.66);
+}
+
+/* Pourrait être une classe, mais l’élément `kbd` convient bien: */
+kbd {
+	background: rgba(255, 255, 196, 0.66);
+}
+
+.hu_repro {
+	display: -webkit-flex;
+	display: flex;
+}
+
+.hu_repro img {
+	background: white;
+	padding: 1ex;
+	-webkit-flex: 1 0 auto;
+	flex: 1 0 auto;
+}
+
+tei .hu_rel {
+    position: absolute;
+    right: -8em;
+}
+
+/* Dans les fiches relationnelles et les énoncés RDF,
+les hyperliens sont démarqués différemment parce qu’ils
+sont utilisés comme référants au sens du modèle de données
+RDF. Les délimiteurs utilisés se nomment communément
+«coins de Quine» et servent à la quasi-citation, ce qui
+convient bien aux URI qui peuvent être déréférençables
+ou non selon le cas. */
+.hu_rel a, .hu_enonce a {
+	text-decoration: none;
+}
+
+.hu_rel a::before, .hu_enonce a::before {
+	content: '⌜';
+	padding-right: 0.15em;
+}
+
+.hu_rel a::after, .hu_enonce a::after {
+	content: '⌟';
+	padding-left: 0.15em;
+}
+
+.hu_rel a:hover, .hu_enonce a:hover {
+    background: rgb(196, 196, 255);
+}
+
+/* Même en HTML5, il n’existe pas d’élément de niveau linéaire
+correspondant directement au concept d’auteur ou de créateur
+d’une ressource. Je choisis d’appliquer la classe suivante
+à l’élément `mark`, dont la sémantique convient dans la mesure
+où les noms d’auteur sont habituellement distingués dans le
+contexte d’une notice ou d’une liste ou l’élément linéaire
+dépend le plus souvent d’un titre ou d’un item décrit
+précédemment dans un élément de niveau “flux”. Notons que
+l’application d’une distinction graphique est très utile
+pour rendre non ambigüe les références à des personnes ayant
+des homonymes; on peut aussi ajouter des attributs `title`. */
+.hu_nom-auteur {
+	background: transparent;
+	font-variant: small-caps;
+	color: currentcolor;
+}
+
+
+
+
+
