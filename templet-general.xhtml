@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<!--
+# Comment utiliser sur ce templet
+
+Ce templet de page Web peut être copié et utilisé pour toute page du site
+contenant du TEI ou du HTML.
+
+Vous devez mettre votre contenu balisé entre les commentaires
+«Début: contenu effectif» et «Fin: contenu effectif». Entre ces deux
+commentaires, le templet contient des balises de document section:
+  <section>
+  ...
+  </section>
+Votre contenu va à la place des trois points. S’il s’agit bien de
+TEI sans HTML, des balises `tei` doivent être ajoutées dans la `section`,
+mais si vous avez plutôt du HTML (contenant possiblement des fragments
+TEI imbriqués), copiez votre contenu directement dans la `section`
+tel que vous l’avez balisé. Si votre HTML contient des fragments
+TEI, donnez à chacun de ces fragments imbriqués leurs propres balises
+<tei>...</tei>. Selon le mode du contenu TEI, appliquez à l’élément
+`tei` l’attribut `rend="descript"` ou `rend="transcript"`. Cette
+dernière valeur convient aux transcriptions, car les transcriptions
+ne contiennent pas d’éléments `p` pour séparer les paragraphes, donc
+on applique une propriété spéciale pour traiter les sauts de ligne.
+
+Veillez à retirer le présent commentaire quand vous copiez le templet
+pour l’utiliser dans une nouvelle page. Pour «spécialiser» la page,
+il faut aussi spécifier [le contenu entre crochets] aux différents
+endroits (titre, auteur etc.) dans les métadonnées et le corps du texte.
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+@@include('./fragments/header.xhtml', {
+"title": "[Partie du corpus | article spécifique]",
+"description": "[Contenu du premier paragraphe de l’article, de la fiche ou de la transcription, sans les balises.]"
+})
+<body>
+<div id="wrapper">
+    @@include('./fragments/menu.xhtml')
+    <div id="page" class="container">
+        <article id="content">
+            <header class="title">
+                <h2>[Titre spécifique pour le document actuel]</h2>
+            </header>
+            <!-- Début: contenu effectif -->
+            <section>
+                <p>[Auteur de la présente fiche ou transcription]</p>
+            </section>
+            <!-- Fin: contenu effectif -->
+        </article>
+        <nav id="sidebar">
+            <div class="box2">
+                <div class="title">
+                    <h2>Pages liées pour le texte actuel</h2>
+                </div>
+                <ul class="style2">
+                    <li><a href="#">[Présentation]</a></li>
+                    <li><a href="#">[Liste des manuscrits]</a></li>
+                    <li><a href="#">[Fiche codicologique]</a></li>
+                    <li><a href="#">[Table des rubriques]</a></li>
+                    <li><a href="#">[Table des illustrations]</a></li>
+                    <li><a href="#">[Transcriptions]</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+@@include('./fragments/footer.xhtml')
+</body>
+</html>
