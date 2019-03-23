@@ -4,23 +4,23 @@ Feuille de style pour le template 'Neuf Preux'
 
 */
 
-.neuf-preux h3 {
+h3 {
 	color: navy;
 }
 
-.neuf-preux .title h2 {
+ .title h2 {
 	color: crimson;
 }
 
-.neuf-preux .title .byline {
+ .title .byline {
     color: darkseagreen;
 }
 
-.neuf-preux #header-wrapper {
+ #header-wrapper {
     background: crimson;
 }
 
-.neuf-preux #banner {
+ #banner {
     overflow: hidden;
 		height: 500px;
     background: url("export.png") no-repeat center;
@@ -28,7 +28,7 @@ Feuille de style pour le template 'Neuf Preux'
 		background-size: cover;
 }
 
-.neuf-preux .hu_rel {
+ .hu_rel {
     padding: 1em;
     margin: 1em 0;
 }
