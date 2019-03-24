@@ -1,25 +1,32 @@
-var fileinclude = require('gulp-file-include');
-var clean = require('gulp-clean');
-var gulp = require('gulp');
+const fileinclude = require('gulp-file-include');
+const clean = require('gulp-clean');
+const gulp = require('gulp');
 
-var target = './docs';
-var targetStyle = target + '/style';
+const target = './docs';
+const targetStyle = target + '/style';
 
-gulp.task('clean-docs', function () {
+function cleandocs() {
     return gulp.src(target, {read: false})
       .pipe(clean());
-});
+}
 
-gulp.task('copy-resources', ['clean-docs'], function() {
-    gulp.src(['./style/**' ])
+function copyresources() {
+   return gulp.src(['./style/**' ])
       .pipe(gulp.dest(targetStyle));
-});
+}
 
-gulp.task('default', ['copy-resources'], function() {
-    gulp.src(['./**/*.xhtml', '!./fragments/**', '!./node_modules/**', '!temp.xhtml', '!templet-general.xhtml' ])
+function copy() {
+   return gulp.src(['./**/*.xhtml', '!./fragments/**', '!./node_modules/**', '!temp.xhtml', '!templet-general.xhtml' ])
       .pipe(fileinclude({
         prefix: '@@',
         basepath: '@file'
       }))
       .pipe(gulp.dest(target));
-});
+}
+
+
+const build = gulp.series(cleandocs, copyresources, copy);
+
+exports.build = build;
+exports.default = build;
+
