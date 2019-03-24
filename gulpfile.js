@@ -24,14 +24,3 @@ gulp.task('default', ['copy-resources'], function() {
       .pipe(gulp.dest(target));
 });
 
-var sass = require('gulp-sass');
-
-gulp.task('sass', function() {
-  gulp.src('style/default.scss')
-  .pipe(sass({style: 'expanded'}))
-  .pipe(gulp.dest('docs'))
-});
-
-gulp.task('watch', function() {
-  gulp.watch('style/default.scss', ['sass']);
-});
