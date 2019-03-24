@@ -5,17 +5,17 @@ var gulp = require('gulp');
 var target = './docs';
 var targetStyle = target + '/style';
 
-gulp.task('clean-docs', function () {
+gulp.task('clean-docs', function (done) {
     return gulp.src(target, {read: false})
       .pipe(clean());
 });
 
-gulp.task('copy-resources', ['clean-docs'], function() {
+gulp.task('copy-resources', gulp.series('clean-docs'), function() {
     gulp.src(['./style/**' ])
       .pipe(gulp.dest(targetStyle));
 });
 
-gulp.task('default', ['copy-resources'], function() {
+gulp.task('default', gulp.series('copy-resources'), function() {
     gulp.src(['./**/*.xhtml', '!./fragments/**', '!./node_modules/**', '!temp.xhtml', '!templet-general.xhtml' ])
       .pipe(fileinclude({
         prefix: '@@',
@@ -23,4 +23,3 @@ gulp.task('default', ['copy-resources'], function() {
       }))
       .pipe(gulp.dest(target));
 });
-
