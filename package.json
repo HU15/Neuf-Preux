@@ -5,8 +5,8 @@
   "licence": "Creative Commons",
   "devDependencies": {
     "gulp": "^4.0.0",
-    "gulp-clean": "^0.3.2",
-    "gulp-file-include": "^1.0.0"
+    "gulp-clean": "latest",
+    "gulp-file-include": "latest"
   },
   "scripts": {
     "build": "gulp default"
