@@ -270,6 +270,10 @@ pubPlace:last-child::after {
     content: '.';
 }
 
+title{
+    display: inline;
+}
+
 date {
     display: inline;
 }
