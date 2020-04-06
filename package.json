@@ -6,7 +6,8 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-clean": "latest",
-    "gulp-file-include": "latest"
+    "gulp-file-include": "latest",
+    "kind-of": "^6.0.3"
   },
   "scripts": {
     "build": "gulp default"
